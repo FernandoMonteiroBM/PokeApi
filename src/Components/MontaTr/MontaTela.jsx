@@ -32,11 +32,6 @@ const MontaTela = () => {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
-        <button onClick={diminuiPoke}>Anterior</button>
-        <button onClick={mudaPoke}>Proximo</button>
-      </form>
-
       {pokemonData.map((data) => {
         return (
           <div className="container">
@@ -48,14 +43,37 @@ const MontaTela = () => {
               <div className="imagemBg">
                 <img src={data.sprites["front_default"]} alt="Sprite" />
               </div>
+              <div>
+                <h2>Descrição</h2>
+                <div className="descricao">
+                  <p>Peso: {Math.round(data.weight / 4.3)} lbs</p>
+                  <p>Altura: {Math.round(data.height * 3.9)}</p>
+                  <p>Exp: {data.base_experience}</p>
+                  <p>
+                    Habilidades: {data.abilities[0].ability.name}
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h2>Moveset</h2>
+                <div className="descricao">
+                  <p>{data.moves[0].move.name}</p>
+                  <p>{data.moves[1].move.name}</p>
+                  <p>{data.moves[2].move.name}</p>
+                  <p>{data.moves[3].move.name}</p>
+                </div>
+              </div>
             </div>
           </div>
         );
       })}
+      <form onSubmit={handleSubmit} className="buttons">
+        <button onClick={diminuiPoke} className="button">Anterior</button>
+        <p className="indice">{pokemon}</p>
+        <button onClick={mudaPoke} className="button">Proximo</button>
+      </form>
     </div>
   );
 };
 
 export default MontaTela;
-//{Math.round(data.weight / 4.3)} lbs
-//{Math.round(data.height * 3.9)}"

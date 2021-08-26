@@ -2,13 +2,14 @@
   text-align: center;
 }
 body {
-  background-color: crimson;
+  background: linear-gradient( crimson,rgb(199, 0, 40));
   background-size: 150%;
 }
 
 .container {
-  display: flex ;
+  display: flex;
   justify-content: center;
+  color: white;
 }
 
 img {
@@ -25,23 +26,60 @@ input {
 .name {
   text-align: center;
   color: white;
-
 }
-.tipo{
+.tipo {
   text-align: center;
   color: white;
   margin-left: 10px;
 }
-.tipoNome{
+.tipoNome {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
   align-content: space-between;
 }
-.imagemBg{
+.imagemBg {
   background-color: white;
-  border-radius: 30px;
+  border-radius: 20px;
   height: 322px;
   width: 389px;
-
+  transition: all 1s;
+}
+.imagemBg:hover {
+  transform: scale(1.1);
+}
+.descricao {
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  transition: all 1s;
+}
+.descricao:hover {
+  transform: scale(1.1);
+}
+.buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+  height: 55px;
+}
+.indice {
+  margin-top: 0px;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+}
+.button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: all 0.5s;
+}
+.button:active {
+  background-color: rgb(170, 3, 3);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
