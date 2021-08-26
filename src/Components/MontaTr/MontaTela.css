@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+body {
+  background-color: crimson;
+  background-size: 150%;
+}
+
+.container {
+  display: flex ;
+  justify-content: center;
+}
+
+img {
+  height: 23em;
+}
+
+input {
+  box-sizing: border-box;
+  font-size: 2rem;
+  padding: 1rem;
+  display: block;
+  margin: 2rem auto;
+}
+.name {
+  text-align: center;
+  color: white;
+
+}
+.tipo{
+  text-align: center;
+  color: white;
+  margin-left: 10px;
+}
+.tipoNome{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+.imagemBg{
+  background-color: white;
+  border-radius: 30px;
+  height: 322px;
+  width: 389px;
+
+}
