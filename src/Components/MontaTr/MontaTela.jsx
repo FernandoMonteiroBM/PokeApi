@@ -6,6 +6,7 @@ const MontaTela = () => {
   const [pokemon, setPokemon] = useState(0);
   const [pokemonData, setPokemonData] = useState([]);
   const [pokemonType, setPokemonType] = useState("");
+  const [pokemonDescricao, setPokemonDescricao]=useState([])
 
   function mudaPoke() {
     setPokemon(pokemon + 1);
@@ -19,10 +20,15 @@ const MontaTela = () => {
   };
   const getPokemon = async () => {
     const toArray = [];
+    const toArray2 = [];
     try {
       const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+      const url2 = `https://pokeapi.co/api/v2/pokemon-species/${pokemon}`;
       const res = await axios.get(url);
+      const res2 = await axios.get(url2);
       toArray.push(res.data);
+      toArray2.push(res2.data);
+      setPokemonDescricao(res2.data.flavor_text_entries[12].flavor_text)
       setPokemonType(res.data.types[0].type.name);
       setPokemonData(toArray);
     } catch (e) {
@@ -41,7 +47,7 @@ const MontaTela = () => {
                 <h2 className="tipo">Tipo: {pokemonType}</h2>
               </div>
               <div className="imagemBg">
-                <img src={data.sprites["front_default"]} alt="Sprite" />
+                <img src={data.sprites.other["official-artwork"].front_default} alt="Sprite" />
               </div>
               <div>
                 <h2>Descrição</h2>
@@ -52,6 +58,7 @@ const MontaTela = () => {
                   <p>
                     Habilidades: {data.abilities[0].ability.name}
                   </p>
+                  <p>{pokemonDescricao}</p>
                 </div>
               </div>
               <div>
@@ -61,6 +68,7 @@ const MontaTela = () => {
                   <p>{data.moves[1].move.name}</p>
                   <p>{data.moves[2].move.name}</p>
                   <p>{data.moves[3].move.name}</p>
+                  <p></p>
                 </div>
               </div>
             </div>

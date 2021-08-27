@@ -13,7 +13,7 @@ body {
 }
 
 img {
-  height: 23em;
+  height: 18em;
 }
 
 input {
@@ -41,9 +41,10 @@ input {
 .imagemBg {
   background-color: white;
   border-radius: 20px;
-  height: 322px;
+  height: 285px;
   width: 389px;
   transition: all 1s;
+  margin-left: 11px
 }
 .imagemBg:hover {
   transform: scale(1.1);
@@ -53,6 +54,8 @@ input {
   background-color: white;
   color: black;
   transition: all 1s;
+  padding: 10px 10px 10px 10px;
+  
 }
 .descricao:hover {
   transform: scale(1.1);
