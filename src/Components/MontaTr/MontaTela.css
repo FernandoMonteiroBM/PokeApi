@@ -2,7 +2,7 @@
   text-align: center;
 }
 body {
-  background: linear-gradient(crimson, rgb(199, 0, 40));
+ 
   background-size: 150%;
 }
 
@@ -25,7 +25,7 @@ input {
 }
 .name {
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
   text-transform: capitalize;
 }
 .tipo {
@@ -45,7 +45,7 @@ input {
   background-color: transparent;
   border-radius: 20px;
   height: 248px;
-  width: 389px;
+  width: 320px;
   transition: all 1s;
   margin-left: 6px;
   perspective: 1000px;
@@ -69,7 +69,7 @@ input {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; 
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 .imagemBg-front {
@@ -91,7 +91,7 @@ input {
   transition: all 1s;
   padding: 5px 5px 5px 5px;
   height: 248px;
-  width: 389px;
+  width: 320px;
 }
 .moveset {
   border-radius: 20px;
@@ -100,7 +100,8 @@ input {
   transition: all 1s;
   padding: 1px 5px 5px 5px;
   height: 158px;
-  width: 389px;
+  width: 320px;
+
   margin-bottom: 10px;
 }
 .moveset:hover {
@@ -115,15 +116,19 @@ input {
   justify-content: space-evenly;
   align-content: space-between;
   height: 55px;
+  margin-right: 8px;
+  
 }
 .indice {
   margin-top: 0px;
   font-size: 26px;
   font-weight: bold;
   color: white;
+  margin-left: 8px;
+
 }
 .button {
-  background-color: red;
+  background-color: rgb(255, 75, 75);
   color: white;
   border: none;
   border-radius: 5px;

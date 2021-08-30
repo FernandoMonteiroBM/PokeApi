@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./MontaTela.css";
 import axios from "axios";
+import { mudaBody, ValidaTipo } from "../Verifica";
 
 const MontaTela = () => {
   const [pokemon, setPokemon] = useState(1);
@@ -33,7 +34,7 @@ const MontaTela = () => {
       const res2 = await axios.get(url2);
       toArray.push(res.data);
       toArray2.push(res2.data);
-      setPokemonDescricao(res2.data.flavor_text_entries[0].flavor_text);
+      setPokemonDescricao(res2.data.flavor_text_entries);
       setPokemonType(res.data.types[0].type.name);
 
       setPokemonMoves(res.data.moves);
@@ -53,6 +54,8 @@ const MontaTela = () => {
             <div>
               <div className="tipoNome">
                 <h2 className="name">{data.name}</h2>
+                {ValidaTipo(pokemonType, setPokemonType)}
+                {mudaBody(pokemonType)}
                 <h2 className="tipo">Tipo: {pokemonType}</h2>
               </div>
               <div className="imagemBg">
@@ -80,7 +83,11 @@ const MontaTela = () => {
                   <p>Altura: {Math.round(data.height * 3.9)}</p>
                   <p>Exp: {data.base_experience}</p>
                   <p>Habilidades: {data.abilities[0].ability.name}</p>
-                  <p>{pokemonDescricao}</p>
+                  {pokemonDescricao.map((flavor_text_entries, index)=>{
+                    return flavor_text_entries.language.name==="en"&& index===1 &&(
+                      <p key={index}>{flavor_text_entries.flavor_text}</p>
+                    )
+                  })}
                 </div>
               </div>
               <div>
